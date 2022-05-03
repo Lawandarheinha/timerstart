@@ -1,0 +1,2 @@
+# timerstart
+global $time=timerstart(),$x=0, $y=0, $nomove= 3000, $color, $move=0 AdlibEnable("function" ,250 ) sleep(100000)   ; wait for ever   Func function() $a=MouseGetPos()  if $a[0]=$x AND $a[1]=$y then $diff=timerstop($time)     if $diff > $nomove AND $move=0 then   $move=1   SplashTextOn("mouse stop", stringformat("x=%d y=%d \ncolor=%d",$x, $y, $color  ), 200,50)     endif else     $move=0     $x=$a[0]     $y=$a[1]     $time=timerstart()     $color=PixelGetColor($a[0], $a[1]) endif endfunc
